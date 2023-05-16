@@ -73,7 +73,7 @@ const HomePage = () => {
     const renderSuccessView = () => {
         const {data} = apiResponse
         
-        if (false) {const filteredData = data.filter(each => `${each.title}${each.author}`.toLowerCase().includes(userSearch.toLocaleLowerCase()))
+        if (data) {const filteredData = data.filter(each => `${each.title}${each.author}`.toLowerCase().includes(userSearch.toLocaleLowerCase()))
         console.log("hai",filteredData)
         if (listView) {
             return (
