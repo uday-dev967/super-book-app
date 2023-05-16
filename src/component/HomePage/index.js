@@ -74,7 +74,7 @@ const HomePage = () => {
         const {data} = apiResponse
         
         if (data) {const filteredData = data.filter(each => `${each.title}${each.author}`.toLowerCase().includes(userSearch.toLocaleLowerCase()))
-        console.log("hai",filteredData)
+        
         if (listView) {
             return (
                 <div>
