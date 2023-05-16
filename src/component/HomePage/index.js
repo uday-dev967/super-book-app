@@ -73,7 +73,7 @@ const HomePage = () => {
     const renderSuccessView = () => {
         const {data} = apiResponse
         
-        const filteredData = data.filter(each => `${each.title}${each.author}`.toLowerCase().includes(userSearch.toLocaleLowerCase()))
+        if (false) {const filteredData = data.filter(each => `${each.title}${each.author}`.toLowerCase().includes(userSearch.toLocaleLowerCase()))
         console.log("hai",filteredData)
         if (listView) {
             return (
@@ -88,12 +88,22 @@ const HomePage = () => {
             <ul className="book-ul-grid">
                 {filteredData.map(each => <GridView key={each.id} bookData={each}/>)}
             </ul>
-        </div>)
+        </div>)}
+
+        return (
+            <div>
+                <div className="d-flex flex-row justify-content-center align-items-center no-data">
+                    <h1 className="text-success p-2 text-center">OPPS! SOMETHING WENT WRONG</h1>
+                </div>
+            </div>
+        )
     }
 
     const renderLoadingView = () => (
         <LoadingViewContainer>
-          <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
+            <div className="d-flex flex-row justify-content-center align-items-center no-data">
+                <Loader type="ThreeDots" color="green" height="50" width="50" />
+            </div>
         </LoadingViewContainer>
     );
 
